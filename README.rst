@@ -72,7 +72,7 @@ Usage
     # Create an event
     cube.put("myevent", {"temp": 30})
     # or
-    cube.put("myvent", {"temp": 30}, time=datatime.now().isoformat())
+    cube.put("myevent", {"temp": 30}, time=datatime.now().isoformat())
 
     # Request events data
     # See Cube queries:
