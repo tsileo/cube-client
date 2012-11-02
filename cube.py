@@ -17,7 +17,7 @@ class Cube:
     """
     event = dict(type=event_type, data=event_data)
     
-    event["time"] = kwargs.get("time", datetime.now().isoformat())
+    event["time"] = kwargs.get("time", datetime.utcnow().isoformat())
     
     if kwargs.get("id"):
       event["id"] = kwargs.get("id")
@@ -32,7 +32,7 @@ class Cube:
 
   def make_query(self, query_type, expression, **kwargs):
     data = dict(expression=expression, 
-          stop=kwargs.get("stop", datetime.now().isoformat()))
+          stop=kwargs.get("stop", datetime.utcnow().isoformat()))
 
     if kwargs.get("start"):
       data["start"] = kwargs.get("start")
