@@ -46,7 +46,7 @@ class Cube:
     r = requests.get(self.evaluator_url + query_type, params=data)
     r.raise_for_status()
 
-    return r.json
+    return r.json()
   
   def event(self, expression, **kwargs):
     """
@@ -66,4 +66,4 @@ class Cube:
     """
     r = requests.get(self.evaluator_url + "types")
     r.raise_for_status()
-    return r.json
+    return r.json()
