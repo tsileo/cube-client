@@ -67,20 +67,20 @@ Usage
 
     cube = Cube()
     # or
-    cube = Cube("localhost") 
+    cube = Cube('localhost') 
 
     # Create an event
-    cube.put("myevent", {"temp": 30})
+    cube.put("myevent", {'temp': 30})
     # or
-    cube.put("myevent", {"temp": 30}, time=datatime.now().isoformat())
+    cube.put("myevent", {'temp': 30}, time=datetime.now().isoformat())
 
     # Request events data
     # See Cube queries:
     # https://github.com/square/cube/wiki/Queries#wiki-metric
-    cube.event("myevent(temp)")
+    cube.event('myevent(temp)')
 
     # Request metrics
-    cube.metric(c.metric("sum(myevent)", step="36e5", start="2012-10-01"))
+    cube.metric(c.metric('sum(myevent)', step='36e5', start='2013-9-01'))
 
     # Request known event types
     cube.types()
