@@ -25,7 +25,7 @@ You can post (`Collector <https://github.com/square/cube/wiki/Collector>`_) and 
 Overview
 ========
 
-::
+.. code-block:: python
 
     >>> from cube import Cube, ONE_HOUR
     >>> c = Cube()
@@ -66,7 +66,7 @@ Installation
 Usage
 =====
 
-::
+.. code-block:: python
 
     from cube import Cube, ONE_HOUR
     from datetime import datetime
@@ -109,7 +109,7 @@ Metric resolutions shortcut
 Event helper
 ------------
 
-::
+.. code-block:: python
 
     from cube import Cube, Event
 
