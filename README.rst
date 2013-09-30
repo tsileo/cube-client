@@ -52,7 +52,7 @@ Overview
 Requirements
 ============
 
-* `Requests <http://docs.python-requests.org/en/latest/>`_
+ * `Requests <http://docs.python-requests.org/en/latest/>`_
 
 
 Installation
@@ -106,6 +106,27 @@ Metric resolutions shortcut
 
     from cube import ONE_HOUR, FIVE_MINUTE
 
+Event helper
+------------
+
+::
+
+    from cube import Cube, Event
+
+    cube = Cube()
+
+    my_event = cube.new_event('myevent')
+    # or
+    my_event = Event(cube, 'myevent')
+
+    my_event.put({'temp': 10})
+    my_event.put({'temp': 20})
+
+    my_event.event()
+    # [{u'time': u'2012-10-01T13:04:04.453Z'}, {u'time': u'2012-10-01T13:04:39.725Z'}]
+
+    my_event.event('myevent(temp)')
+
 
 Changelog
 =========
@@ -115,9 +136,11 @@ Changelog
 
 **September 30 2013**
 
-- Cleaned code (PEP8)
-- Compatible with requests 2.0
-- Added metric resolution shortcut
+ * Cleaned code (PEP8)
+ * Compatible with requests 2.0
+ * Added metric resolution shortcut
+ * Added a ``Event`` helper
+
 
 
 License (MIT)
