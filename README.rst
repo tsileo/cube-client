@@ -27,25 +27,25 @@ Overview
 
 ::
 
-    >>> from cube import Cube
+    >>> from cube import Cube, ONE_HOUR
     >>> c = Cube()
     >>> 
-    >>> c.put("sample_data", {"myval": 10})
+    >>> c.put('sample_data', {'myval': 10})
     [{'data': {'myval': 10}, 'type': 'sample_data', 'time': '2012-10-01T13:04:04.453929'}]
 
-    >>> c.event("sample_data")
+    >>> c.event('sample_data')
     [{u'time': u'2012-10-01T13:04:04.453Z'}]
 
-    >>> c.put("sample_data", {"myval": 20})
+    >>> c.put('sample_data', {'myval': 20})
     [{'data': {'myval': 20}, 'type': 'sample_data', 'time': '2012-10-01T13:04:39.725676'}]
 
-    >>> c.event("sample_data")
+    >>> c.event('sample_data')
     [{u'time': u'2012-10-01T13:04:04.453Z'}, {u'time': u'2012-10-01T13:04:39.725Z'}]
 
-    >>> c.event("sample_data(myval)")
+    >>> c.event('sample_data(myval)'')
     [{u'data': {u'myval': 10}, u'time': u'2012-10-01T13:04:04.453Z'}, {u'data': {u'myval': 20}, u'time': u'2012-10-01T13:04:39.725Z'}]
 
-    >>> c.metric("sum(sample_data)", step="36e5", start="2012-10-01")
+    >>> c.metric('sum(sample_data)', step=ONE_HOUR, start='2012-10-01')
     [{u'value': 0, u'time': u'2012-10-01T00:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T01:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T02:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T03:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T04:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T05:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T06:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T07:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T08:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T09:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T10:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T11:00:00.000Z'}, {u'value': 0, u'time': u'2012-10-01T12:00:00.000Z'}, {u'value': 2, u'time': u'2012-10-01T13:00:00.000Z'}]
 
 
