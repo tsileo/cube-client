@@ -16,10 +16,10 @@ Features
 
 You can post (`Collector <https://github.com/square/cube/wiki/Collector>`_) and request (`Evaluator <https://github.com/square/cube/wiki/Evaluator>`_) data to/from Cube.
 
- * Post events
- * Request events
- * Request metrics
- * Request known event types
+- Post events
+- Request events
+- Request metrics
+- Request known event types
 
 
 Overview
@@ -52,7 +52,7 @@ Overview
 Requirements
 ============
 
- * `Requests <http://docs.python-requests.org/en/latest/>`_
+- `Requests <http://docs.python-requests.org/en/latest/>`_
 
 
 Installation
@@ -136,10 +136,10 @@ Changelog
 
 **September 30 2013**
 
- * Cleaned code (PEP8)
- * Compatible with requests 2.0
- * Added metric resolution shortcut
- * Added a ``Event`` helper
+- Cleaned code (PEP8)
+- Compatible with requests 2.0
+- Added metric resolution shortcut
+- Added a ``Event`` helper
 
 
 
