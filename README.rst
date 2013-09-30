@@ -4,6 +4,12 @@ Cube-client
 
 A Python client for `Cube: Time Series Data Collection & Analysis <http://square.github.com/cube/>`_.
 
+.. image:: https://pypip.in/v/cube-client/badge.png
+        :target: https://crate.io/packages/cube-client
+
+.. image:: https://pypip.in/d/cube-client/badge.png
+        :target: https://crate.io/packages/cube-client
+
 
 Features
 ========
@@ -62,7 +68,7 @@ Usage
 
 ::
 
-    from cube import Cube
+    from cube import Cube, ONE_HOUR
     from datetime import datetime
 
     cube = Cube()
@@ -81,9 +87,25 @@ Usage
 
     # Request metrics
     cube.metric(c.metric('sum(myevent)', step='36e5', start='2013-9-01'))
+    # or
+    cube.metric(c.metric('sum(myevent)', step=ONE_HOUR, start='2013-9-01'))
 
     # Request known event types
     cube.types()
+
+Metric resolutions shortcut
+---------------------------
+
+- **TEN_SECOND** for **1e4** - 10-second
+- **ONE_MINUTE** for **6e4** - 1-minute 
+- **FIVE_MINUTE** for **3e5** - 5-minute
+- **ONE_HOUR** for **36e5** - 1-hour
+- **ONE_DAY** for **864e5** - 1-day
+
+::
+
+    from cube import ONE_HOUR, FIVE_MINUTE
+
 
 Changelog
 =========
@@ -95,6 +117,7 @@ Changelog
 
 - Cleaned code (PEP8)
 - Compatible with requests 2.0
+- Added metric resolution shortcut
 
 
 License (MIT)

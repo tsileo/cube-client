@@ -9,6 +9,14 @@ import requests
 
 API_VERSION = '1.0'
 
+# Metric resolutions shortcuts
+# From https://github.com/square/cube/wiki/Evaluator
+TEN_SECOND = '1e4'
+ONE_MINUTE = '6e4'
+FIVE_MINUTE = '3e5'
+ONE_HOUR = '36e5'
+ONE_DAY = '864e5'
+
 
 class Cube(object):
     def __init__(self, hostname="localhost", **kwargs):
