@@ -85,6 +85,17 @@ Usage
     # Request known event types
     cube.types()
 
+Changelog
+=========
+
+0.2.0
+-----
+
+**September 30 2013**
+
+- Cleaned code (PEP8)
+- Compatible with requests 2.0
+
 
 License (MIT)
 =============
