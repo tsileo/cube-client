@@ -118,6 +118,11 @@ Metric resolutions shortcut
 
     from cube import ONE_HOUR, FIVE_MINUTE
 
+Time utils
+----------
+
+
+
 Event helper
 ------------
 

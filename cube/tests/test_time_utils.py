@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 """
+Copyright (c) 2013 Thomas Sileo
 Copyright (c) 2012 Steven Buss
 Originally from:
 https://github.com/sbuss/pypercube/blob/master/tests/test_time_utils.py
@@ -41,3 +42,13 @@ class TestMetric(unittest.TestCase):
                 datetime(2012, 7, 6))
         self.assertRaisesRegexp(ValueError, "is not a valid resolution",
                 time_utils.floor, self.now, 12345)
+
+    def test_timeago(self):
+        self.assertEqual(time_utils.timeago('1D', start=self.now),
+                         datetime(2012, 7, 5, 20, 33, 16, 573225))
+        self.assertEqual(time_utils.timeago('1s', start=self.now),
+                         datetime(2012, 7, 6, 20, 33, 15, 573225))
+        self.assertEqual(time_utils.timeago('1W', start=self.now),
+                         datetime(2012, 6, 29, 20, 33, 16, 573225))
+        self.assertEqual(time_utils.timeago('1M', start=self.now),
+                         datetime(2012, 6, 6, 20, 33, 16, 573225))

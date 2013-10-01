@@ -8,6 +8,8 @@ except ImportError:
 
 import requests
 
+from cube.event import Event
+
 API_VERSION = '1.0'
 
 # Metric resolutions shortcuts
@@ -17,23 +19,6 @@ ONE_MINUTE = '6e4'
 FIVE_MINUTE = '3e5'
 ONE_HOUR = '36e5'
 ONE_DAY = '864e5'
-
-
-class Event(object):
-    def __init__(self, cube, event_type):
-        self.cube = cube
-        self.event_type = event_type
-
-    def put(self, event_data={}, **kwargs):
-        return self.cube.put(self.event_type, event_data, **kwargs)
-
-    def event(self, expression=None, **kwargs):
-        if expression is None:
-            expression = self.event_type
-            return self.cube.event(expression, **kwargs)
-
-    def metric(self, expression, **kwargs):
-        return self.cube.metric(self, expression, **kwargs)
 
 
 class Cube(object):
