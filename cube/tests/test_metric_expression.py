@@ -1,3 +1,11 @@
+# -*- encoding: utf-8 -*-
+
+"""
+Copyright (c) 2012 Steven Buss
+Originally from:
+https://github.com/sbuss/pypercube/blob/master/tests/test_metric_expression.py
+"""
+
 import unittest
 
 from cube.expression import (Distinct, EventExpression,
