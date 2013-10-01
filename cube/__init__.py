@@ -8,6 +8,7 @@ except ImportError:
 
 import requests
 
+from cube.expression import Sum, Min, Max, Median, Distinct
 from cube.event import Event
 
 API_VERSION = '1.0'

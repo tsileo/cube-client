@@ -128,8 +128,7 @@ Event helper
 
 .. code-block:: python
 
-    from cube import Cube, Event
-    from cube.expression import Sum
+    from cube import Cube, Event, Sum
 
     cube = Cube()
 
