@@ -142,14 +142,14 @@ Metric resolutions shortcut
 - **ONE_HOUR** for **36e5** - 1-hour
 - **ONE_DAY** for **864e5** - 1-day
 
-::
+.. code-block:: python
 
     from cube import ONE_HOUR, FIVE_MINUTE
 
 Time utils
 ----------
 
-::
+.. code-block:: python
 
     from cube import ONE_HOUR
     from cube.time_utils import timeago
@@ -169,15 +169,15 @@ Changelog
 - Cleaned code (PEP8)
 - Compatible with requests 2.0
 - Added metric resolution shortcut
-- Added a ``Event`` helper
-- **Merged some parts of `sbuss/pypercube <https://github.com/sbuss/pypercube>`_**, ``time_utils``, ``EventExpression`` and ``Filter``.
+- Added a Event helper
+- Merged some parts of `pypercube <https://github.com/sbuss/pypercube>`_, ``time_utils``, ``EventExpression`` and ``Filter``.
 
 
 
 License (MIT)
 =============
 
-Copyright (c) 2012 Thomas Sileo and Steven Buss
+Copyright (c) 2013 Thomas Sileo and Steven Buss
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
