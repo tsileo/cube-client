@@ -129,6 +129,7 @@ Event helper
 .. code-block:: python
 
     from cube import Cube, Event
+    from cube.expression import Sum
 
     cube = Cube()
 
@@ -143,6 +144,12 @@ Event helper
     # [{u'time': u'2012-10-01T13:04:04.453Z'}, {u'time': u'2012-10-01T13:04:39.725Z'}]
 
     my_event.event('myevent(temp)')
+
+    temp = my_event.expression('temp').gt('temp', 15)
+    # => myevent(temp).gt(temp, 15)
+
+    my_event.metric(Sum(temp))
+    # => my_event.metric('sum(myevent(temp).gt(temp, 15))')
 
 
 Changelog

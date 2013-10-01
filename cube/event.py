@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from cube.expression import EventExpression
 
 
 class Event(object):
@@ -15,4 +16,7 @@ class Event(object):
             return self.cube.event(expression, **kwargs)
 
     def metric(self, expression, **kwargs):
-        return self.cube.metric(self, expression, **kwargs)
+        return self.cube.metric(expression, **kwargs)
+
+    def expression(self, event_properties):
+        return EventExpression(self.event_type, event_properties)
