@@ -52,9 +52,21 @@ class Cube(object):
         return [event]
 
     def make_query(self, query_type, expression, **kwargs):
+        """
+        Actually perform the query,
+        try to convert datetime to isoformat on the fly
+        """
         data = dict(expression=str(expression),
-                    stop=kwargs.get('stop', datetime.utcnow().isoformat()))
+                    stop=kwargs.get('stop', datetime.utcnow()))
         data.update(kwargs)
+
+        for k in ['start', 'stop']:
+            if k in data:
+                try:
+                    data[k] = data[k].isoformat()
+                except AttributeError:
+                    pass
+
         r = requests.get(self.evaluator_url + query_type, params=data)
         r.raise_for_status()
 

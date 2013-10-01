@@ -42,7 +42,7 @@ Overview
     >>> c.event('sample_data')
     [{u'time': u'2012-10-01T13:04:04.453Z'}, {u'time': u'2012-10-01T13:04:39.725Z'}]
 
-    >>> c.event('sample_data(myval)'')
+    >>> c.event('sample_data(myval)')
     [{u'data': {u'myval': 10}, u'time': u'2012-10-01T13:04:04.453Z'}, {u'data': {u'myval': 20}, u'time': u'2012-10-01T13:04:39.725Z'}]
 
     >>> c.metric('sum(sample_data)', step=ONE_HOUR, start='2012-10-01')
@@ -91,7 +91,7 @@ Usage
     # Request metrics
     cube.metric('sum(myevent(temp))', step='36e5', start='2013-9-01'))
     # or
-    cube.metric('sum(myevent(temp))', step=ONE_HOUR, start='2013-9-01'))
+    cube.metric('sum(myevent(temp))', step=ONE_HOUR, start=datetime(2013, 9, 1))
 
     # Request known event types
     cube.types()
@@ -103,24 +103,6 @@ Usage
     temp = EventExpression('myevent', 'temp')
 
     cube.metric(Sum(temp), step=ONE_HOUR, start='2013-10-1')
-
-
-Metric resolutions shortcut
----------------------------
-
-- **TEN_SECOND** for **1e4** - 10-second
-- **ONE_MINUTE** for **6e4** - 1-minute 
-- **FIVE_MINUTE** for **3e5** - 5-minute
-- **ONE_HOUR** for **36e5** - 1-hour
-- **ONE_DAY** for **864e5** - 1-day
-
-::
-
-    from cube import ONE_HOUR, FIVE_MINUTE
-
-Time utils
-----------
-
 
 
 Event helper
@@ -149,6 +131,31 @@ Event helper
 
     my_event.metric(Sum(temp))
     # => my_event.metric('sum(myevent(temp).gt(temp, 15))')
+
+
+Metric resolutions shortcut
+---------------------------
+
+- **TEN_SECOND** for **1e4** - 10-second
+- **ONE_MINUTE** for **6e4** - 1-minute 
+- **FIVE_MINUTE** for **3e5** - 5-minute
+- **ONE_HOUR** for **36e5** - 1-hour
+- **ONE_DAY** for **864e5** - 1-day
+
+::
+
+    from cube import ONE_HOUR, FIVE_MINUTE
+
+Time utils
+----------
+
+::
+
+    from cube import ONE_HOUR
+    from cube.time_utils import timeago
+
+
+    c.metric('sum(myevent(key))', step=ONE_HOUR, start=timeago('6h'))
 
 
 Changelog
