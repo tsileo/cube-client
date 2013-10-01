@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read(fname):
@@ -14,7 +14,8 @@ setup(
     license='MIT',
     keywords='cube time series',
     url='https://github.com/tsileo/cube-client',
-    py_modules=['cube'],
+    packages=find_packages(exclude=['ez_setup', 'tests', 'tests.*']),
+    test_suite="cube.tests",
     long_description=read('README.rst'),
     install_requires=['requests'],
     classifiers=[
