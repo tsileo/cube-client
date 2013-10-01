@@ -80,18 +80,30 @@ Usage
     # or
     cube.put("myevent", {'temp': 30}, time=datetime.now().isoformat())
 
+    # Low level queries
+    # =================
+
     # Request events data
     # See Cube queries:
     # https://github.com/square/cube/wiki/Queries#wiki-metric
     cube.event('myevent(temp)')
 
     # Request metrics
-    cube.metric(c.metric('sum(myevent)', step='36e5', start='2013-9-01'))
+    cube.metric('sum(myevent(temp))', step='36e5', start='2013-9-01'))
     # or
-    cube.metric(c.metric('sum(myevent)', step=ONE_HOUR, start='2013-9-01'))
+    cube.metric('sum(myevent(temp))', step=ONE_HOUR, start='2013-9-01'))
 
     # Request known event types
     cube.types()
+
+    # High level queries
+    # ==================
+
+    from cube.expressions import EventExpression, Sum
+    temp = EventExpression('myevent', 'temp')
+
+    cube.metric(Sum(temp), step=ONE_HOUR, start='2013-10-1')
+
 
 Metric resolutions shortcut
 ---------------------------
@@ -140,7 +152,7 @@ Changelog
 - Compatible with requests 2.0
 - Added metric resolution shortcut
 - Added a ``Event`` helper
-- Merged some parts of `sbuss/pypercube <https://github.com/sbuss/pypercube>`_, ``EventExpression`` and ``Filter``.
+- **Merged some parts of `sbuss/pypercube <https://github.com/sbuss/pypercube>`_**, ``time_utils``, ``EventExpression`` and ``Filter``.
 
 
 

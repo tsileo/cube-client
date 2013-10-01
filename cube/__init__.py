@@ -66,7 +66,7 @@ class Cube(object):
         return [event]
 
     def make_query(self, query_type, expression, **kwargs):
-        data = dict(expression=expression,
+        data = dict(expression=str(expression),
                     stop=kwargs.get('stop', datetime.utcnow().isoformat()))
         data.update(kwargs)
         r = requests.get(self.evaluator_url + query_type, params=data)
