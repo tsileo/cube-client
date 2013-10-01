@@ -94,5 +94,5 @@ class Cube(object):
         r.raise_for_status()
         return r.json()
 
-    def new_event(self, event_type):
+    def get_event(self, event_type):
         return Event(self, event_type)

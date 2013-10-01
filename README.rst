@@ -127,7 +127,7 @@ Event helper
 
     cube = Cube()
 
-    my_event = cube.new_event('myevent')
+    my_event = cube.get_event('myevent')
     # or
     my_event = Event(cube, 'myevent')
 
