@@ -93,7 +93,8 @@ def _interval_string_to_seconds(interval_string):
 
     :type interval_string: str
     :param interval_string: Interval string like 1M, 1W, 1M3W4h2s...
-        (s => seconds, m => minutes, h => hours, D => days, W => weeks, M => months, Y => Years).
+        (s => seconds, m => minutes, h => hours, D => days,
+         W => weeks, M => months, Y => Years).
 
     :rtype: int
     :return: The conversion in seconds of interval_string.

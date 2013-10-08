@@ -93,4 +93,7 @@ class Cube(object):
         return r.json()
 
     def get_event(self, event_type):
+        """
+        Shortcut to initialize an Event object
+        """
         return Event(self, event_type)

@@ -3,6 +3,9 @@ from cube.expression import EventExpression
 
 
 class Event(object):
+    """ Cube instance that hold an event_type,
+    with shortcut for getting/creating events/metrics,
+    and creating expression. """
     def __init__(self, cube, event_type):
         self.cube = cube
         self.event_type = event_type
