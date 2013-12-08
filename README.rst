@@ -99,7 +99,7 @@ Usage
     # High level queries
     # ==================
 
-    from cube.expressions import EventExpression, Sum
+    from cube.expression import EventExpression, Sum
     temp = EventExpression('myevent', 'temp')
 
     cube.metric(Sum(temp), step=ONE_HOUR, start='2013-10-1')
