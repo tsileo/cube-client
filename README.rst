@@ -4,10 +4,10 @@ Cube-client
 
 A Python client for `Cube: Time Series Data Collection & Analysis <http://square.github.com/cube/>`_.
 
-.. image:: https://pypip.in/v/cube-client/badge.png
+.. image:: https://img.shields.io/pypi/v/cube-client.svg
         :target: https://crate.io/packages/cube-client
 
-.. image:: https://pypip.in/d/cube-client/badge.png
+.. image:: https://img.shields.io/pypi/dm/cube-client.svg
         :target: https://crate.io/packages/cube-client
 
 
